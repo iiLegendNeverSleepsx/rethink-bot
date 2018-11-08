@@ -42,24 +42,24 @@ client.on("ready", async () => {
 	console.log(`${client.user.tag} has started!`);
 });
 
-client.on("message", async message => {
+client.on("message", async response => {
 
-	if (message.author.bot) return;
+	if (response.author.bot) return;
 
 	const prefixes = ['+', `<@491345635962781696> `];
 	let prefix = false;
   	for(const thisPrefix of prefixes) {
-    		if(message.content.startsWith(thisPrefix)) prefix = thisPrefix;
+    		if(response.content.startsWith(thisPrefix)) prefix = thisPrefix;
   	}
 
-	let messageArray = message.content.split(" ");
+	let messageArray = response.content.split(" ");
 	let cmd = messageArray.shift();
 	let args = messageArray
 
 	if(!prefix) return;
 
 	let commandfile = client.commands.get(cmd.slice(prefix.length));
-	if (commandfile) commandfile.run(client,client,message,args);
+	if (commandfile) commandfile.run(client,client,response,args);
 });
 
 client.login(process.env.token); 

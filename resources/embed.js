@@ -42,5 +42,5 @@ exports.mlog = function (title, message, response) {
   .setDescription(message)
   .setColor("#ff0000")
   
-  response.guild.channels.find("name", "logs").send({embed})
+  response.guild.channels.find("name", "message-logs").send({embed})
 }

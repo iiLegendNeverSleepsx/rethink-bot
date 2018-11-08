@@ -21,6 +21,7 @@ module.exports.run = async (bot, client, message, args) => {
       
       response.channel.send({embed})
 	 }
+}
 	 // } else {response.reply("you are not allowed to run that command!");}
 }
 

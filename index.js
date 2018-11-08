@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var mysql = require('mysql');
+/* var mysql = require('mysql');
 
 // Establish Database Connection:
 
@@ -13,7 +13,7 @@ var con = mysql.createConnection({
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-});
+}); */
 
 const fs = require("fs");
 

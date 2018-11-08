@@ -42,6 +42,10 @@ client.on("ready", async () => {
 	console.log(`${client.user.tag} has started!`);
 });
 
+client.on("messageDelete", async message => {
+	require('./resources/embed.js').mlog("Message Deleted", "Sent by " + message.author.tag + " (" + message.author.id + ") \n Content: \n\n" + message.content, message)
+})
+
 client.on("message", async response => {
 
 	if (response.author.bot) return;

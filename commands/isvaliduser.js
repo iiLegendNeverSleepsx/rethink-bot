@@ -10,7 +10,7 @@ module.exports.run = async (bot, client, response, args) => {
 	    return;
     } else {member = memberf[1]}
     response.reply("member is in the server!")
-});
+}
 
 module.exports.help = {
 	name: "isvaliduser",

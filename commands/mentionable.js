@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs"); 
 
-module.exports.run = async (bot, client, message, args) => {
+module.exports.run = async (bot, client, response, args) => {
   //if () {
 	  let role = args.join(" ");
 	  if (!role) return response.reply("please say a role to make mentionable or unmentionable.");

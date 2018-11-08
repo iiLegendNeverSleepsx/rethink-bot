@@ -35,3 +35,12 @@ exports.log = async function (title, message, response) {
   
   response.guild.channels.find("name", "logs").send({embed})
 }
+
+exports.mlog = async function (title, message, response) {
+  const embed = new discord.RichEmbed()
+  .setTitle(title)
+  .setDescription(message)
+  .setColor()
+  
+  response.guild.channels.find("name", "logs").send({embed})
+}

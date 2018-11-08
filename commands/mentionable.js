@@ -7,6 +7,7 @@ module.exports.run = async (bot, client, response, args) => {
 	  if (!role) return response.reply("please say a role to make mentionable or unmentionable.");
     const roles = response.guild.roles.array();
     const matches = roles.filter(role => role.name.toLowerCase().includes(args.join(" ").toLowerCase())) 
+          role = matches[0].name;
 	  if (matches.length === 1) {
 		  if (response.guild.roles.find("name", matches[0].name).mentionable) {response.guild.roles.find("name", matches[0].name).setMentionable(false, `Requested by ${response.author.tag}.`).then(() => response.reply(`${role} is no longer mentionable.`)).catch(err => response.channel.send("Oops! Something went wrong while trying to set mentionable of your role. Try doing these steps then try again:  \n `-` Make sure I have the \"Manage Role\" permission. \n `-` Check that the role being edited is not higher than my highest role."));}
 		  if (!response.guild.roles.find("name", matches[0].name).mentionable) {response.guild.roles.find("name", matches[0].name).setMentionable(true, `Requested by ${response.author.tag}.`).then(() => response.reply(`${role} is now mentionable!`)).catch(err => response.channel.send("Oops! Something went wrong while trying to set mentionable of your role. Try doing these steps then try again:  \n `-` Make sure I have the \"Manage Role\" permission. \n `-` Check that the role being edited is not higher than my highest role."));}

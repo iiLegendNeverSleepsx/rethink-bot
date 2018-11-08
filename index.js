@@ -43,7 +43,7 @@ client.on("ready", async () => {
 });
 
 client.on("messageDelete", async message => {
-	require('./resources/embed.js').mlog("Message Deleted", "Sent by " + message.author.tag + " (" + message.author.id + ") \n Content: \n\n" + message.content, message)
+	require('./resources/embed.js').mlog("Message Deleted", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) \n\n **__Content__**: \n" + message.content, message)
 })
 
 client.on("message", async response => {

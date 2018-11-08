@@ -4,7 +4,7 @@ const fs = require("fs");
 module.exports.run = async (bot, client, response, args) => {
     let member;
     let memberf = require('../resources/valid.js').user(client, response, args);
-    if (memberf[0] = 'multi') {
+    if (memberf[0] === 'multi') {
 	    const embed = require('../resources/valid.js').embed(memberf[1])
 	    response.channel.send({embed});
 	    return;

@@ -1,4 +1,4 @@
-const discord = require('discord.js');
+const Discord = require('discord.js');
 
 exports.user = function(client, response, args) {
    let returned;
@@ -11,4 +11,12 @@ exports.user = function(client, response, args) {
      if (matches.length === 0) returned = "none";
      if (matches.length >= 2) returned = ['multi', matches];
    }
+}
+
+exports.listMulti = function(arr, type) {
+   const embed = new Discord.RichEmbed()
+   .setTitle(`${arr.length} ${type}s found:`)
+   .setDescription(arr.join(",\n"))
+   .setFooter("Please run the command again with a more specific term.");
+   return embed
 }

@@ -7,7 +7,7 @@ function colorString(color) {
   return newcolor;
 }
 
-exports.embedInChannel = async function (title, message, color, response) {
+exports.embedInChannel = function (title, message, color, response) {
   color = colorString(color);
   const embed = new discord.RichEmbed()
   .setTitle(title)
@@ -17,7 +17,7 @@ exports.embedInChannel = async function (title, message, color, response) {
   response.channel.send({embed})
 }
 
-exports.embedToUser = async function (title, message, color, response) {
+exports.embedToUser = function (title, message, color, response) {
   color = colorString(color);
   const embed = new discord.RichEmbed()
   .setTitle(title)
@@ -27,7 +27,7 @@ exports.embedToUser = async function (title, message, color, response) {
   response.author.send({embed})
 }
 
-exports.log = async function (title, message, response) {
+exports.log = function (title, message, response) {
   const embed = new discord.RichEmbed()
   .setTitle(title)
   .setDescription(message)
@@ -36,7 +36,7 @@ exports.log = async function (title, message, response) {
   response.guild.channels.find("name", "logs").send({embed})
 }
 
-exports.mlog = async function (title, message, response) {
+exports.mlog = function (title, message, response) {
   const embed = new discord.RichEmbed()
   .setTitle(title)
   .setDescription(message)

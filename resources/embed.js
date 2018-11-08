@@ -40,7 +40,7 @@ exports.mlog = function (title, message, response) {
   const embed = new discord.RichEmbed()
   .setTitle(title)
   .setDescription(message)
-  .setColor()
+  .setColor("#ff0000")
   
   response.guild.channels.find("name", "logs").send({embed})
 }

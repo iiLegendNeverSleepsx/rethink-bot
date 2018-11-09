@@ -36,10 +36,10 @@ module.exports.run = async (bot, client, response, args) => {
 }
 
 module.exports.help = {
-  name: "mentionable",
-  usage: "mentionable <role>",
+  name: "roleinfo",
+  usage: "roleinfo <role>",
   description: "nil",
-  longdes: "Sets a role's mentionable option. \n*Note: This is a toggle; use it again to make the role unmentionable again.*",
-  mentionedperm: "MENT.list",
-  category: "Management"
+  longdes: "View a role's info.",
+  mentionedperm: "none",
+  category: "Moderation"
 }

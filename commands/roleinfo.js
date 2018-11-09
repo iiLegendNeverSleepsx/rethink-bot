@@ -19,7 +19,7 @@ module.exports.run = async (bot, client, response, args) => {
       .addField("Permission Count", role.permissions)
       .addField("Mention", "`" + role.toString() + "`")
       
-      message.channel.send({embed})
+      response.channel.send({embed})
       } else {
     if (matches.length === 0) response.reply("no roles were found with your query.");
     if (matches.length >= 2) {

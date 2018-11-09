@@ -16,7 +16,7 @@ module.exports.run = async (bot, client, response, args) => {
       .addField("Shown Seprately From Online Members", role.hoist)
       .addField("Members", role.members.size)
       .addField("Position", role.position)
-      .addField("Permission Count", role.permissions)
+      .addField("Permission Integer", role.permissions)
       .addField("Mention", "`" + role.toString() + "`")
       .setColor(role.hexColor)
       

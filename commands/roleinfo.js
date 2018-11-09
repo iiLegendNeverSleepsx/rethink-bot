@@ -18,6 +18,7 @@ module.exports.run = async (bot, client, response, args) => {
       .addField("Position", role.position)
       .addField("Permission Count", role.permissions)
       .addField("Mention", "`" + role.toString() + "`")
+      .setColor(role.hexColor)
       
       response.channel.send({embed})
       } else {

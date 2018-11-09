@@ -6,7 +6,7 @@ module.exports.run = async (bot, client, response, args) => {
 	  let channel = args.join(" ");
 	  if (!channel) return response.reply("please say a role to view.");
     const channels = response.guild.channels.array();
-    const matches = channels.filter(channel => channel.name.toLowerCase().includes(args.join(" ").toLowerCase())) 
+    const matches = channels.filter(channel => channel.name.toLowerCase().includes(args.join(" ").toLowerCase(); channel.type === "text")) 
           channel = matches[0];
 	  if (matches.length === 1) {
 		  const embed = new Discord.RichEmbed()

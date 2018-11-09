@@ -34,10 +34,10 @@ module.exports.run = async (bot, client, response, args) => {
 }
 
 module.exports.help = {
-  name: "roleinfo",
-  usage: "roleinfo <role>",
+  name: "channelinfo",
+  usage: "channelinfo <role>",
   description: "nil",
-  longdes: "View a role's info.",
+  longdes: "View a channel's info.",
   mentionedperm: "none",
   category: "Moderation"
 }

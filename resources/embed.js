@@ -36,11 +36,11 @@ exports.log = function (title, message, response) {
   response.guild.channels.find("name", "logs").send({embed})
 }
 
-exports.mlog = function (title, message, response) {
+exports.mlog = function (cha,title, message, response) {
   const embed = new discord.RichEmbed()
   .setTitle(title)
   .setDescription(message)
   .setColor("#ff0000")
   
-  response.guild.channels.find("name", "message-logs").send({embed})
+  response.guild.channels.get(cha.id).send({embed})
 }

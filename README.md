@@ -1,1 +1,1 @@
-# rethink-bot
+# ReThink Bot

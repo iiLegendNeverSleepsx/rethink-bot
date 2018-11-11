@@ -10,7 +10,8 @@ module.exports.run = async (bot, client, response, args) => {
   .addField("Version", require('../package.json').version, true)
   .addField("Servers", client.guilds.size, true)
   .addField("Users", client.users.size, true)
-  .addField("Options", "~~Invite~~ (DISABLED) - [Support](https://discord.gg/gRTg6KE)");
+  .addField("Options", "~~Invite~~ (DISABLED) • [Support](https://discord.gg/gRTg6KE)")
+  .setColor("#ff0000");
   
   response.channel.send({embed})
 }

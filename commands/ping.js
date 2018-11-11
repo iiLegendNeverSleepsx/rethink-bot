@@ -9,8 +9,8 @@ module.exports.run = async (bot, client, response, args) => {
   
   const embed = new Discord.RichEmbed()
   .setDescription("Pinged!")
-  .addField("Response Time", `${times * 1000} seconds`)
-  .addField("Ping", `${Math.round(ping * 1000)} seconds`))
+  .addField("Response Time", `${times} milliseconds`)
+  .addField("Ping", `${Math.round(ping * 1000)} seconds`)
   .setColor("#ff0000")
   
   response.reply({embed})

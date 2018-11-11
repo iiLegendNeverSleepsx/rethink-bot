@@ -60,7 +60,7 @@ client.on("messageDeleteBulk", async messages => {
 	
 	if (!cha) return;
 	
-	require('./resources/embed.js').mlog(cha, "Messages Deleted", "**" + messages.array().length + "** messages deleted", messages.array()[1])
+	require('./resources/embed.js').mbulklog(cha, "Messages Deleted", "**" + messages.array().length + "** messages deleted", messages.array()[1])
 })
 
 client.on("messageUpdate", async (message, newmessage) => { if (newmessage.content === message.content) return; if (message.author.bot) return;

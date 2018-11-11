@@ -41,6 +41,8 @@ client.developers.set("two", "bye");
 client.on("ready", async () => {
 	console.log(`${client.user.tag} has started!`);
 	client.user.setGame("with someone.")
+	
+	if (client.guilds.size < 2309) return;
 	const Manager = new Discord.ShardingManager('./index.js');
 	Manager.spawn(1);
 });

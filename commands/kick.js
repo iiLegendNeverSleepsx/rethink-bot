@@ -14,7 +14,7 @@ module.exports.run = async (bot, client, response, args) => {
     let thing = require('../resources/search.js').guildMember(args[0], response)
     if (isArray(thing)) {
       const embed = new Discord.RichEmbed()
-      .setTitle(`${thing.length}` users found:`)
+      .setTitle(`${thing.length} users found:`)
       .setDescription(thing.join(",\n")
       .setFooter("Please run the command again with a more specific term.")
       

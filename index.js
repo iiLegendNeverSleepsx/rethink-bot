@@ -40,7 +40,7 @@ client.developers.set("two", "bye");
 
 client.on("ready", async () => {
 	console.log(`${client.user.tag} has started!`);
-	client.user.client.user.setPresence({ game: { type: "ONLINE", name: "LISTENING" }, status: "For +help" });
+	client.user.client.user.setPresence({ game: { type: "LISTENING", name: "for +help" }, status: "online" });
 	
 	if (client.guilds.size < 2309) return;
 	const Manager = new Discord.ShardingManager('./index.js');

@@ -56,7 +56,7 @@ client.on("messageDelete", async message => { if (message.author.bot) return;
 })
 
 client.on("messageDeleteBulk", async messages => {
-	let cha = message.guild.channels.find("name", "message-logs");
+	let cha = messages.last.guild.channels.find("name", "message-logs");
 	
 	if (!cha) return;
 	

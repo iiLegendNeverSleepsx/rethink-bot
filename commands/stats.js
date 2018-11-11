@@ -8,7 +8,7 @@ module.exports.run = async (bot, client, response, args) => {
   .addField("Developer", client.users.get('258706134850863106').tag)
   .addField("Other Owners", client.users.get('306287412437450753').tag + ", " + client.users.get('193979517470113792').tag)
   .addField("Version", require('../package.json').version)
-  .addField("Options", "~~Invite~~ (DISABLED) - [Support](https://discord.gg/gRTg6KE)
+  .addField("Options", "~~Invite~~ (DISABLED) - [Support](https://discord.gg/gRTg6KE)");
   
   response.channel.send({embed})
 }

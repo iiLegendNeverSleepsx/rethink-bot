@@ -55,6 +55,14 @@ client.on("messageDelete", async message => {
 	require('./resources/embed.js').mlog(cha, "Message Deleted", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) \n\n **__Content__**: \n" + message.content, message)
 })
 
+client.on("messageUpdate", async (message, newmessage) => { if (newmessage.content === message.content) return;
+	let cha = message.guild.channels.find("name", "message-logs");
+	
+	if (!cha) return;
+	
+	require('./resources/embed.js').mlog(cha, "Message Deleted", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) \n\n **__Old Message:__**: \n" + message.content + "\n\n __**New Message**__" + newmessage.content, message)
+})
+
 client.on("message", async response => {
 
 	if (response.author.bot) return;

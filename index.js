@@ -74,8 +74,9 @@ client.on("messageUpdate", async (message, newmessage) => { if (newmessage.conte
 client.on("guildMemberAdd", async member => {
   if (member.guild.channels.find("name", "settings")) {
           const messages = member.guild.channels.find("name", "settings").messages.array();
-          const matches = messages.filter(role => role.content.toLowerCase().includes("welcome_message")) 
+          const matches = messages.filter(m => m.content.toLowerCase().includes("welcome_message")) 
           if (!matches.length === 1) return;
+	  console.log(matches[0]);
 	  const cont = matches[0].content.replace("/user/", `<@${member.user.id}>`).replace("welcome_message:", "");
 	  member.user.send(cont);
   }

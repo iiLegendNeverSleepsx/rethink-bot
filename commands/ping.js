@@ -13,7 +13,7 @@ module.exports.run = async (bot, client, response, args) => {
   .addField("Ping", `${Math.round(ping)} milliseconds`)
   .setColor("#ff0000")
   
-  response.reply({embed})
+  m.edit({embed})
 }
 
 module.exports.help = {

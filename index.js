@@ -15,6 +15,9 @@ con.connect(function(err) {
   console.log("Connected!");
 }); */
 
+const Manager = new Discord.ShardingManager('./YOUR_BOT_FILE_NAME.js');
+Manager.spawn(1);
+
 const fs = require("fs");
 
 client.commands = new Discord.Collection();

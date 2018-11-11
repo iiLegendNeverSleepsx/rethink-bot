@@ -37,10 +37,13 @@ exports.log = function (title, message, response) {
 }
 
 exports.mlog = function (cha,title, message, response) {
+  let logcolor = "#ff0000";
+  
+  if (title === "Message Edited") logcolor = "#fff247";
   const embed = new discord.RichEmbed()
   .setTitle(title)
   .setDescription(message)
-  .setColor("#ff0000")
+  .setColor(logcolor)
   
   response.guild.channels.get(cha.id).send({embed})
 }

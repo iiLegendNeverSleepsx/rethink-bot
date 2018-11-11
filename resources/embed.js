@@ -47,3 +47,16 @@ exports.mlog = function (cha,title, message, response) {
   
   response.guild.channels.get(cha.id).send({embed})
 }
+
+exports.mbulklog = function (cha,title, message, response, collection) {
+  let logcolor = "#ff0000";
+  
+  const embed = new discord.RichEmbed()
+  .setTitle(title)
+  .setDescription(message)
+  .setColor(logcolor)
+  
+  response.guild.channels.get(cha.id).send({embed})
+  
+  response.guild.channels.get(cha.id).send(discord.RichEmbed().setColor(logcolor).setTitle("Deleted Messages").setDescription(collection.map((x, y) => y.join(', \n'), {split: {char: ' '}})))
+}

@@ -15,7 +15,7 @@ module.exports.run = async (bot, client, response, args) => {
     if (isArray(thing)) {
       const embed = new Discord.RichEmbed()
       .setTitle(`${thing.length} users found:`)
-      .setDescription(thing.join(",\n")
+      .setDescription(thing.join(",\n"))
       .setFooter("Please run the command again with a more specific term.")
       
       response.channel.send({embed})

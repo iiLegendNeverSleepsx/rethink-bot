@@ -73,7 +73,7 @@ client.on("messageUpdate", async (message, newmessage) => { if (newmessage.conte
 
 client.on("guildMemberAdd", async member => {
   if (member.guild.channels.find("name", "settings")) {
-          const messages = member.guild.channels.find("name", "settings").messages.array();
+          const messages = member.guild.channels.find("name", "settings").fetchMessages.array();
           const matches = messages.filter(m => m.content.toLowerCase().includes("welcome_message")) 
           if (!matches.length === 1) return;
 	  console.log(matches[0]);

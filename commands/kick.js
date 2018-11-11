@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs"); 
 
-module.exports.run = async (bot, client, response, args) => {
+module.exports.run = async (bot, client, response, args) => { 
   if (!response.member.hasPermission("KICK_MEMBERS")) return response.reply("you don't have one of the required permissions to run this command: \n `-` ADMINISTRATOR \n `-` KICK_MEMBERS");
   if (response.mentions.members.first() || response.guild.members.get(args[0])) {
     let user = response.mentions.members.first() || response.guild.members.get(args[0]);

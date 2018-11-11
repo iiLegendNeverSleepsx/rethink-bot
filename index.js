@@ -60,7 +60,7 @@ client.on("messageUpdate", async (message, newmessage) => { if (newmessage.conte
 	
 	if (!cha) return;
 	
-	require('./resources/embed.js').mlog(cha, "Message Deleted", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) \n\n **__Old Message:__**: \n" + message.content + "\n\n __**New Message**__ \n" + newmessage.content, message)
+	require('./resources/embed.js').mlog(cha, "Message Edited", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) \n\n **__Old Message:__**: \n" + message.content + "\n\n __**New Message**__ \n" + newmessage.content, message)
 })
 
 client.on("message", async response => {

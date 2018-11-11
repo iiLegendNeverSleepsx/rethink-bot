@@ -29,7 +29,8 @@ module.exports.run = async (bot, client, response, args) => {
         user.kick(args.join(" "));
       } else {message.reply("I can not kick that user! Do I have the permission to kick members? Is the user's highest role not higher than mine?")}
     }
-}
+  }
+} 
 
 module.exports.help = {
   name: "kick",

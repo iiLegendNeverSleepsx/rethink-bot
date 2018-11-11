@@ -15,9 +15,6 @@ con.connect(function(err) {
   console.log("Connected!");
 }); */
 
-const Manager = new Discord.ShardingManager('./index.js');
-Manager.spawn(1);
-
 const fs = require("fs");
 
 client.commands = new Discord.Collection();
@@ -43,6 +40,9 @@ client.developers.set("two", "bye");
 
 client.on("ready", async () => {
 	console.log(`${client.user.tag} has started!`);
+	client.setGame("with someone.")
+	const Manager = new Discord.ShardingManager('./index.js');
+	Manager.spawn(1);
 });
 
 client.on("messageDelete", async message => {

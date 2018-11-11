@@ -71,6 +71,17 @@ client.on("messageUpdate", async (message, newmessage) => { if (newmessage.conte
 	require('./resources/embed.js').mlog(cha, "Message Edited", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) \n\n **__Old Message:__**: \n" + message.content + "\n\n __**New Message**__ \n" + newmessage.content, message)
 })
 
+client.on("guildMemberAdd", async member => {
+  if (member.guild.channels.find("name", "settings")) {
+          const messages = member.guild.channels.find("name", "settings").messages.array();
+          const matches = messages.filter(role => role.content.toLowerCase().includes("welcome_message")) 
+          if (!matches.length === 1) return;
+	  const cont = matches[0].content.replace("/user/", `<@${member.user.id}>`).replace("welcome_message:", "");
+	  member.user.send(cont);
+  }
+});
+	  
+
 client.on("message", async response => {
 
 	if (response.author.bot) return;

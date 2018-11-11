@@ -56,11 +56,11 @@ client.on("messageDelete", async message => { if (message.author.bot) return;
 })
 
 client.on("messageDeleteBulk", async messages => {
-	let cha = messages.last.guild.channels.find("name", "message-logs");
+	let cha = messages.array()[0].guild.channels.find("name", "message-logs");
 	
 	if (!cha) return;
 	
-	require('./resources/embed.js').mlog(cha, "Messages Deleted", "**" + messages.array().length + "** messages deleted", messages.last)
+	require('./resources/embed.js').mlog(cha, "Messages Deleted", "**" + messages.array().length + "** messages deleted", messages.array()[1])
 })
 
 client.on("messageUpdate", async (message, newmessage) => { if (newmessage.content === message.content) return; if (message.author.bot) return;

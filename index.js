@@ -40,9 +40,9 @@ client.developers.set("two", "bye");
 
 client.on("ready", async () => {
 	console.log(`${client.user.tag} has started!`);
-	client.user.client.user.setPresence({ game: { type: "LISTENING", name: "for +help" }, status: "online" });
+	client.user.client.user.setPresence({ game: { type: "LISTENING", name: "+help" }, status: "online" });
 	
-	if (client.guilds.size < 2309) return;
+	if (client.guilds.size < 2399) return;
 	const Manager = new Discord.ShardingManager('./index.js');
 	Manager.spawn(1);
 });
@@ -52,7 +52,7 @@ client.on("messageDelete", async message => { if (message.author.bot) return;
 	
 	if (!cha) return;
 	
-	require('./resources/embed.js').mlog(cha, "Message Deleted", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) \n\n **__Content__**: \n" + message.content, message)
+	require('./resources/embed.js').mlog(cha, "Message Deleted", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) in <#" + message.channel.id + "> \n\n **__Content__**: \n" + message.content, message)
 })
 
 client.on("messageDeleteBulk", async messages => {
@@ -60,7 +60,7 @@ client.on("messageDeleteBulk", async messages => {
 	
 	if (!cha) return;
 	
-	require('./resources/embed.js').mbulklog(cha, "Messages Deleted", "**" + messages.array().length + "** messages deleted", messages.array()[1], messages)
+	require('./resources/embed.js').mbulklog(cha, "Messages Deleted", "**" + messages.array().length + "** messages deleted in <#" + messages.array()[0].channel.id + ">" , messages.array()[1], messages)
 })
 
 client.on("messageUpdate", async (message, newmessage) => { if (newmessage.content === message.content) return; if (message.author.bot) return;
@@ -68,7 +68,7 @@ client.on("messageUpdate", async (message, newmessage) => { if (newmessage.conte
 	
 	if (!cha) return;
 	
-	require('./resources/embed.js').mlog(cha, "Message Edited", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) \n\n **__Old Message:__**: \n" + message.content + "\n\n __**New Message**__ \n" + newmessage.content, message)
+	require('./resources/embed.js').mlog(cha, "Message Edited", "Sent by **" + message.author.tag + "** (**" + message.author.id + "**) in <#" + message.channel.id + "> \n\n **__Old Message:__**: \n" + message.content + "\n\n __**New Message**__ \n" + newmessage.content, message)
 })
 
 client.on("guildMemberAdd", async member => {

@@ -100,6 +100,12 @@ client.on("message", async response => {
 	if(!prefix) return;
 
 	let commandfile = client.commands.get(cmd.slice(prefix.length));
+	
+	const DEVlist = ['258706134850863106', '193979517470113792', '306287412437450753'];
+	
+	if (commandfile && commandfile.help.mentionedperm === "DEV" && !DEVlist.includes(response.author.id)) return response.reply("you are missing the following permission(s): `This command is reserved for the bot developers`.");
+	
+	
 	if (commandfile) commandfile.run(client,client,response,args);
 });
 

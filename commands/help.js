@@ -22,11 +22,11 @@ module.exports.run = async (bot, client, response, args) => {
     .setFooter("Requested by YOU (" + response.author.tag + ")");
     
     response.author.send({embed}).then(() => 
-        response.reply("Check your direct messages!")
-    ;)
+        response.reply("Check your direct messages!");
+    )
     .catch(err => 
-        response.channel.send({embed})
-    ;)
+        response.channel.send({embed});
+    );
 }
 
 

@@ -13,7 +13,7 @@ const fs = require('fs');
 
       jsfile.forEach((f, i) => {
         let props = require(`./${f}`);
-        commands = commands + props.help.name + " - " + props.help.description + "\n";
+        commands = commands + "`+" + props.help.name + "` - " + props.help.description + "\n";
       });
     });
 
@@ -36,7 +36,7 @@ module.exports.run = async (bot, client, response, args) => {
 module.exports.help = {
   name: "help",
   usage: "help [command]",
-  description: "nil",
+  description: "Views a command or all commands ",
   longdes: "Get information on a single command or view all commands.",
   mentionedperm: "none",
   category: "Utility"

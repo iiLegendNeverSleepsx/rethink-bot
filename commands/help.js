@@ -21,7 +21,8 @@ module.exports.run = async (bot, client, response, args) => {
     .setColor("#ff0000")
     .setFooter("Requested by YOU (" + response.author.tag + ")");
     
-    response.author.send({embed}).then(() => 
+    response.author.send({embed})
+    .then(something => 
         response.reply("Check your direct messages!");
     )
     .catch(err => 

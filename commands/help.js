@@ -2,7 +2,7 @@ let commands = "";
 const Discord = require('discord.js');
 const fs = require('fs');
     
-    fs.readdir(".", (err, files) => {
+    fs.readdir("./commands", (err, files) => {
       if (err) console.log(err);
       let filesa = files.filter(f => f !== "index.js")
       let jsfile = filesa.filter(f => f.split(".").pop() === "js")

@@ -23,3 +23,13 @@ module.exports.run = async (bot, client, response, args) {
     
     response.author.send({embed}).then(() => response.reply("Check your direct messages!");).catch(err => response.channel.send("I was unable to send you a direct message, so here it is in chat:"); response.channel.send({embed});)
 }
+
+
+module.exports.help = {
+  name: "help",
+  usage: "help [command]",
+  description: "nil",
+  longdes: "Get information on a single command or view all commands.",
+  mentionedperm: "none",
+  category: "Utility"
+}

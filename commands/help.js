@@ -21,7 +21,12 @@ module.exports.run = async (bot, client, response, args) => {
     .setColor("#ff0000")
     .setFooter("Requested by YOU (" + response.author.tag + ")");
     
-    response.author.send({embed}).then(() => response.reply("Check your direct messages!");).catch(err => response.channel.send("I was unable to send you a direct message, so here it is in chat:"); response.channel.send({embed});)
+    response.author.send({embed}).then(() => 
+        response.reply("Check your direct messages!")
+    ;)
+    .catch(err => 
+        response.channel.send({embed})
+    ;)
 }
 
 

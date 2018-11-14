@@ -18,7 +18,7 @@ const fs = require('fs');
     });
 
 module.exports.run = async (bot, client, response, args) => {
-    
+    if (!args[0]) {
     const embed = new Discord.RichEmbed()
     .setTitle("All Commands")
     .setDescription(commands)
@@ -30,6 +30,18 @@ module.exports.run = async (bot, client, response, args) => {
         response.reply("Check your direct messages!"))
     .catch(err => 
         response.channel.send({embed}));
+    } else {
+    if (require(`./${args[0]}`)) {
+        const command = require(`./${args[0]}`);
+        const embed = new Discore.RichEmbed()
+        .setTitle(command.help.name)
+        .setColor("#ff0000")
+        .addField("Usage", command.help.usage)
+        .addField("Required Psrmission", command.help.mentionedperm, true)
+        .addField("Category", command.help.category)
+        .addField("Description", command.help.longdesc);
+        
+        response.channel.send({embed});
 }
 
 

@@ -25,11 +25,9 @@ module.exports.run = async (bot, client, response, args) => {
     
     response.author.send({embed})
     .then(something => 
-        response.reply("Check your direct messages!");
-    )
+        response.reply("Check your direct messages!"))
     .catch(err => 
-        response.channel.send({embed});
-    );
+        response.channel.send({embed}));
 }
 
 

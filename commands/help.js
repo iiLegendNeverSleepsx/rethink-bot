@@ -2,9 +2,10 @@ let commands = "";
 const Discord = require('discord.js');
 const fs = require('fs');
     
-    fs.readdir("../commands", (err, files) => {
+    fs.readdir(".", (err, files) => {
       if (err) console.log(err);
-      let jsfile = files.filter(f => f.split(".").pop() === "js")
+      let filesa = files.filter(f => f !== "index.js")
+      let jsfile = filesa.filter(f => f.split(".").pop() === "js")
       if (jsfile.length <= 0) {
         console.log("Couldn't find any commands!")
         return

@@ -42,6 +42,8 @@ module.exports.run = async (bot, client, response, args) => {
         .addField("Description", command.help.longdesc);
         
         response.channel.send({embed});
+    }
+    }
 }
 
 

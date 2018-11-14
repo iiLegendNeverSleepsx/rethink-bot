@@ -1,4 +1,5 @@
 let commands = "";
+const Discord = require('discord.js');
     
     fs.readdir("../commands", (err, files) => {
       if (err) console.log(err);

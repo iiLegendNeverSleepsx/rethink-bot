@@ -42,7 +42,7 @@ module.exports.run = async (bot, client, response, args) => {
         .addField("Description", command.help.longdesc);
         
         response.channel.send({embed});
-    }
+    } else {response.reply("that is not a valid command! Try `=help` to view all commands.")}
     }
 }
 

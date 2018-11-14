@@ -1,4 +1,4 @@
-module.exports.run = async (bot, client, response, args) {
+module.exports.run = async (bot, client, response, args) => {
     let commands = "";
     
     fs.readdir("./commands", (err, files) => {

@@ -1,7 +1,6 @@
-module.exports.run = async (bot, client, response, args) => {
-    let commands = "";
+let commands = "";
     
-    fs.readdir("./commands", (err, files) => {
+    fs.readdir("../commands", (err, files) => {
       if (err) console.log(err);
       let jsfile = files.filter(f => f.split(".").pop() === "js")
       if (jsfile.length <= 0) {
@@ -14,6 +13,8 @@ module.exports.run = async (bot, client, response, args) => {
         commands = commands + props.help.name + " - " + props.help.description + "\n";
       });
     });
+
+module.exports.run = async (bot, client, response, args) => {
     
     const embed = new Discord.RichEmbed()
     .setTitle("All Commands")

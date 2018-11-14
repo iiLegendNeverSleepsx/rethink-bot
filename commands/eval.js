@@ -31,8 +31,8 @@ module.exports.run = async (bot, client, response, args) => {
     ],
     timestamp: new Date(),
     footer: {
-      icon_url: message.author.avatarURL,
-      text: `Eval ran by ${message.author.tag}`
+      icon_url: response.author.avatarURL,
+      text: `Eval ran by ${response.author.tag}`
     }
   }
 });
@@ -47,8 +47,8 @@ module.exports.run = async (bot, client, response, args) => {
     ],
     timestamp: new Date(),
     footer: {
-      icon_url: message.author.avatarURL,
-      text: `Eval ran by ${message.author.tag}`
+      icon_url: response.author.avatarURL,
+      text: `Eval ran by ${response.author.tag}`
     }
   }
 });

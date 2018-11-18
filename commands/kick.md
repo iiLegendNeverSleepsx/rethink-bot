@@ -14,13 +14,13 @@ module.exports.run = async (bot, client, response, args) => {
     let reason = args.slice(1).join(' ');
     if(!reason) reason = "No reason provided";
     
-    const wUser = member;
-    
-    await member.kick(reason).then(() =>
-    require('../resources/embed.js').log("Moderation Action - Kick", `**User:** ${wUser.user.tag} \n**Moderator:** ${response.author.tag} \n**Reason:** ${reason}`, response)
-	wUser.send(`Hey, I just wanted to tell you that you have been kicked from **${response.guild.name}** because of **${reason}**.`);
-  response.channel.send(`Okay, ${wUser.user.tag} was kicked for ${reason}, ${response.author.username}.`);)
-  .catch(error => response.channel.send(`sorry, ${response.author}, I couldn't kick ${member.tag}.`));
+	const wUser = member;
+	
+    await member.kick(reason).then( a => 
+    require('../resources/embed.js').log("Moderation Action - Kick", `**User:** ${wUser.user.tag} \n**Moderator:** ${response.author.tag} \n**Reason:** ${reason}`, response);
+    wUser.send(`Hey, I just wanted to tell you that you have been kicked from **${response.guild.name}** because of **${reason}**.`);
+    response.channel.send(`Okay, ${wUser.user.tag} was kicked for ${reason}, ${response.author.username}.`);)
+     .catch(error => response.channel.send(`sorry, ${response.author}, I couldn't kick ${member.tag}.`));
 }
 
 module.exports.help = {

@@ -83,6 +83,11 @@ client.on("guildMemberAdd", async member => {
 });
 	  
 
+
+let bl = {
+ "98485453258240000": "bypassing permissions"
+}
+
 client.on("message", async response => {
 
 	if (response.author.bot) return;
@@ -103,8 +108,9 @@ client.on("message", async response => {
 	
 	const DEVlist = ['258706134850863106', '193979517470113792', '306287412437450753'];
 	
-	if (commandfile && commandfile.help.mentionedperm === "DEV" && !DEVlist.includes(response.author.id)) return response.reply("you are missing the following permission(s): `This command is reserved for the bot developers`.");
+	if (commandfile.help.mentionedperm === "DEV" && !DEVlist.includes(response.author.id)) return response.reply("you are missing the following permission(s): `This command is reserved for the bot developers`.");
 	
+        if (bl[response.author.id]) return response.reply("You have been blacklisted because of `" + bl[response.author.id] + "`.");
 	
 	if (commandfile) commandfile.run(client,client,response,args);
 });

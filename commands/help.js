@@ -33,7 +33,7 @@ module.exports.run = async (bot, client, response, args) => {
     } else {
     if (require(`./${args[0]}`)) {
         const command = require(`./${args[0]}`);
-        const embed = new Discore.RichEmbed()
+        const embed = new Discord.RichEmbed()
         .setTitle(command.help.name)
         .setColor("#ff0000")
         .addField("Usage", command.help.usage)

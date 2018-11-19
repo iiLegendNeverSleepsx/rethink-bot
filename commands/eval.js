@@ -60,6 +60,6 @@ module.exports.help = {
   usage: "eval <code:js>",
   description: "nil",
   longdes: "Evaluates and runs JavaScript code.",
-  mentedperm:  "DEV",
+  mentionedperm: "DEV",
   category: "DEV"
 }

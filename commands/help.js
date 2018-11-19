@@ -36,10 +36,10 @@ module.exports.run = async (bot, client, response, args) => {
         const embed = new Discord.RichEmbed()
         .setTitle(command.help.name)
         .setColor("#ff0000")
-        .addField("Usage", command.help.usage)
+        .addField("Usage", "`+" + command.help.usage + "`")
         .addField("Required Psrmission", command.help.mentionedperm, true)
         .addField("Category", command.help.category)
-        .addField("Description", command.help.longdesc);
+        .addField("Description", command.help.longdes);
         
         response.channel.send({embed});
     } else {response.reply("that is not a valid command! Try `=help` to view all commands.")}

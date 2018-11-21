@@ -36,6 +36,7 @@ if (!response.member.hasPermission("MUTE_MEMBERS")) return response.reply("it do
   .addField("User", member.user.tag)
   .addField("Moderator", response.author.tag)
   .addField("Reason", reason)
+  .setFooter("See this, but it's not working? Try again. If it still doesn't work, try contacting support.")
   
   m.edit({embed});
   

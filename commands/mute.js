@@ -13,7 +13,7 @@ if (!response.author.hasPermission("MANAGE_MEMBERS")) return response.reply("it 
   const embed = new Discord.RichEmbed().setTitle("Muting")
   .setDescription(loading + " Creating Muted role...");
   
-  const m = await response.channel.send({embed}):
+  const m = await response.channel.send({embed});
   
   if (!response.guild.roles.find("name","Muted")) {response.guild.createRole({name: "Muted"})}
   

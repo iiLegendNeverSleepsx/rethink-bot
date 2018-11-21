@@ -21,7 +21,7 @@ class moneySystem {
          } else {
             reject("ID is not found")
          }
-      }
+      });
    }
                   
    reset() {

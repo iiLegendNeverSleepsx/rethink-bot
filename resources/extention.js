@@ -1,4 +1,4 @@
-let moneySystem = class moneySystem {
+class MoneySystem {
    constructor() {this.cache = {}}
    
    addAmount(id, int) {
@@ -27,3 +27,5 @@ let moneySystem = class moneySystem {
       this.cache = {}
    }
 };
+
+return this.MoneySystem;

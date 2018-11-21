@@ -1,22 +1,23 @@
-let cache;
 
 class moneySystem {
-   constructor() {cache = {}}
+   constructor() {this.cache = {}}
    
    addAmount(id, int) {
-      if (!cache[id]) {cache[id] = int} else
-      {cache[id] = cache[id] + int;
-   }
+      if (isNaN(int)) return undefined;
+      if (!this.cache[id]) {this.cache[id] = int} else
+      {this.cache[id] = this.cache[id] + int;}
+   };
      
    removeAmount(id, int) {
-      if (!cache[id]) {cache[id] = int} else
-      {cache[id] = cache[id] - int;
-   }
+      if (isNaN(int)) return undefined;
+      if (!this.cache[id]) {this.cache[id] = int} else
+      {this.cache[id] = this.cache[id] - int;}
+   };
    
    getAmount(id) {
       new Promise(function(resolve, reject) {
-         if (cache[id]) {
-            resolve(cache[id])
+         if (this.cache[id]) {
+            resolve(this.cache[id])
          } else {
             reject("ID is not found")
          }
@@ -24,6 +25,6 @@ class moneySystem {
    }
                   
    reset() {
-      cache = {}
+      this.cache = {}
    }
 }

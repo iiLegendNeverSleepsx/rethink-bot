@@ -26,4 +26,4 @@ let moneySystem = class moneySystem {
    reset() {
       this.cache = {}
    }
-}
+};

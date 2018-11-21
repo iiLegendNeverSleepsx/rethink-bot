@@ -30,6 +30,14 @@ if (!response.member.hasPermission("MUTE_MEMBERS")) return response.reply("it do
   
   args.shift(); let reason = args.join(" ");
   
+  if (response.guild.roles.find("name", "Muted").members.find(member.user.id)) {
+    embed.setTitle("Muting - Failed")
+    .setDescription("Member was alrrady muted.")
+    .setColor("#fff111")
+    
+    m.edit({embed});
+  } else {
+  
   member.addRole(response.guild.roles.find("name", "Muted"))
   
   embed.setColor("#ff0000").setDescription("Successfully muted!")
@@ -43,6 +51,7 @@ if (!response.member.hasPermission("MUTE_MEMBERS")) return response.reply("it do
   member.send(`Hey, I just wanted to tell you that you have been muted in **${response.guild.name}** because of **${reason}**.`);
   
   require('../resources/embed.js').log("Moderation Action - Mute", `**User:** ${member.user.tag} \n**Moderator:** ${response.author.tag} \n**Reason:** ${reason}`, response);
+  }
 }
 
 module.exports.help = {

@@ -32,7 +32,7 @@ if (!response.member.hasPermission("MUTE_MEMBERS")) return response.reply("it do
   
   member.addRole(response.guild.roles.find("name", "Muted"))
   
-  embed.setColor("#0000ff").setDescription("Successfulky muted!")
+  embed.setColor("#ff0000").setDescription("Successfulky muted!")
   
   m.edit({embed});
   

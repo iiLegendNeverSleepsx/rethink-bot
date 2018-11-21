@@ -1,7 +1,7 @@
+let cache;
+
 class moneySystem {
-   cache = {};
-   
-   constructor() {}
+   constructor() {cache = {}}
    
    addAmount(id, int) {
       if (!cache[id]) {cache[id] = int} else
@@ -21,5 +21,9 @@ class moneySystem {
             reject("ID is not found")
          }
       }
+   }
+                  
+   reset() {
+      cache = {}
    }
 }

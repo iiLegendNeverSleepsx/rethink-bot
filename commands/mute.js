@@ -32,13 +32,13 @@ if (!response.member.hasPermission("MUTE_MEMBERS")) return response.reply("it do
   
   member.addRole(response.guild.roles.find("name", "Muted"))
   
+  embed.setColor("#0000ff").setDescription("Successfulky muted!")
+  
+  m.edit({embed});
+  
   member.send(`Hey, I just wanted to tell you that you have been muted in **${response.guild.name}** because of **${reason}**.`);
   
   require('../resources/embed.js').log("Moderation Action - MUTE", `**User:** ${member.tag} \n**Moderator:** ${response.author.tag} \n**Reason:** ${reason}`);
-  
-  embed.setColor("#0000ff").setDescription("Successfulky muted!");
-  
-  m.edit({embed});
 }
 
 module.exports.help = {

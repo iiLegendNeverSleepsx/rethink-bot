@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 const fs = require("fs"); 
 
 module.exports.run = async (bot, client, response, args) => {
-const member = response.guild.members.get( args[0].replace("<@", "").replace(">", "") );
+const search = args[0].replace("<@", "").replace(">", "")
+const member = response.guild.members.get(args[0].replace("<@", "").replace(">", ""));
 if (!member) return response.reply("not a valid user!");
 if (!response.author.hasPermission("MANAGE_MEMBERS")) return response.reply("it doesn't seem like you can use that!");
 

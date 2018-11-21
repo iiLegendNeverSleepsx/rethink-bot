@@ -21,7 +21,7 @@ if (!response.author.hasPermission("MANAGE_MEMBERS")) return response.reply("it 
   
   m.edit({embed});
   
-  response.guild.channels.forEach(c => c.overwritePermissions(response.guild.roles.find("name", "Muted"), {'SEND_MESSAGES': false, 'ADD_REACTIONS': false})
+  response.guild.channels.forEach(c => c.overwritePermissions(response.guild.roles.find("name", "Muted"), {'SEND_MESSAGES': false, 'ADD_REACTIONS': false}))
   
   embed.setDescription(loading + "Muting member...")
   

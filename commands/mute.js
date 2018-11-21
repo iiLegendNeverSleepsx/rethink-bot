@@ -4,7 +4,7 @@ const fs = require("fs");
 module.exports.run = async (bot, client, response, args) => {
 const member = response.guild.members.get( args[0].replace("<@", "").replace(">", "") );
 if (!member) return response.reply("not a valid user!");
-if (!response.author.hasPermission("MANAGE_MEMBERS") return response.reply("it doesn't seem like you can use that!");
+if (!response.author.hasPermission("MANAGE_MEMBERS")) return response.reply("it doesn't seem like you can use that!");
 
   const loading = client.emojis.find(emoji => emoji.name === "loading");
   
@@ -29,7 +29,13 @@ if (!response.author.hasPermission("MANAGE_MEMBERS") return response.reply("it d
   
   member.addRole(response.guild.roles.find("name", "Muted"))
   
+  member.send(`Hey, I just wanted to tell you that you have been muted in **${response.guild.name}** because of **${reason}**.`);
+  
   require('../resources/embed.js').log("Moderation Action - MUTE", `**User:** ${member.tag} \n**Moderator:** ${response.author.tag} \n**Reason:** ${reason}`);
+  
+  embed.setColor("#0000ff").setDescription("Successfulky muted!");
+  
+  m.edit({embed});
 }
 
 module.exports.help = {

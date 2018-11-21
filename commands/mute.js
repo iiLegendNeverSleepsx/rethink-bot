@@ -6,6 +6,8 @@ const member = response.guild.members.get( args[0].replace("<@", "").replace(">"
 if (!member) return response.reply("not a valid user!");
 if (!response.author.hasPermission("MANAGE_MEMBERS")) return response.reply("it doesn't seem like you can use that!");
 
+  if (member.hasPermission("MANAGE_MEMBERS")) return response.reply("it doesn't seem like you can mute that user!");
+  
   const loading = client.emojis.find(emoji => emoji.name === "loading");
   
   const embed = new Discord.RichEmbed().setTitle("Muting")

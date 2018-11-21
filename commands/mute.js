@@ -5,9 +5,9 @@ module.exports.run = async (bot, client, response, args) => {
 const search = args[0].replace("<@", "").replace(">", "")
 const member = response.guild.members.get(args[0].replace("<@", "").replace(">", ""));
 if (!member) return response.reply("not a valid user!");
-if (!response.member.hasPermission("MANAGE_MEMBERS")) return response.reply("it doesn't seem like you can use that!");
+if (!response.member.hasPermission("MUTE_MEMBERS")) return response.reply("it doesn't seem like you can use that!");
 
-  if (member.hasPermission("MANAGE_MEMBERS")) return response.reply("it doesn't seem like you can mute that user!");
+  if (member.hasPermission("MUTE_MEMBERS")) return response.reply("it doesn't seem like you can mute that user!");
   
   const loading = client.emojis.find(emoji => emoji.name === "loading");
   
